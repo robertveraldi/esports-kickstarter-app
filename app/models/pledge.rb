@@ -1,2 +1,2 @@
 class Pledge < ApplicationRecord
-end
+end 

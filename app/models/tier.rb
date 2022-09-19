@@ -1,2 +1,2 @@
 class Tier < ApplicationRecord
-end
+end 
