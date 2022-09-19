@@ -1,2 +1,4 @@
 class Tier < ApplicationRecord
-end 
+  has_many :users, through: :pledges
+  has_many :pledges
+end

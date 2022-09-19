@@ -15,8 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_190603) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "projects", force: :cascade do |t|
+  create_table "project_categories", force: :cascade do |t|
+    t.integer "project_id"
     t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.decimal "goal_amount", precision: 9, scale: 2
