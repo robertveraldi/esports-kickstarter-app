@@ -39,8 +39,8 @@ Project.create!(
     title: "Hype",
     description: "This is Hype clan.",
     goal_amount: 20000,
-    start_date: Date.parse('10-15-2022', '%m-%d-%Y'),
-    end_date: Date.parse('10-15-2031', '%m-%d-%Y'),
+    start_date: Date.parse('10-01-2022', '%m-%d-%Y'),
+    end_date: Date.parse('10-01-2031', '%m-%d-%Y'),
 )
 
 Category.create!(
@@ -63,27 +63,27 @@ Category.create!(
     name: "Madden",
 )
 
-ProjectCategories.create!(
+ProjectCategory.create!(
     project_id: 1,
     category_id: 2,
 )
 
-ProjectCategories.create!(
+ProjectCategory.create!(
     project_id: 1,
     category_id: 4,
 )
 
-ProjectCategories.create!(
+ProjectCategory.create!(
     project_id: 2,
     category_id: 1,
 )
 
-ProjectCategories.create!(
+ProjectCategory.create!(
     project_id: 2,
     category_id: 3,
 )
 
-Tier.create!(
+tier1 = Tier.create!(
     project_id: 1,
     description: "The tier 1 for Faze clan allows you to receive a swag bag after each event!",
     amount: 100.00,
@@ -91,7 +91,7 @@ Tier.create!(
     delivery_date: Date.parse('01-01-2023', '%m-%d-%Y'),    
 )
 
-Tier.create!(
+tier2 = Tier.create!(
     project_id: 1,
     description: "The tier 2 for Faze clan allows you to receive tickets to each Faze clan esporting event!",
     amount: 1000.00,
@@ -99,7 +99,7 @@ Tier.create!(
     delivery_date: Date.parse('01-01-2023', '%m-%d-%Y'),    
 )
 
-Tier.create!(
+tier3 = Tier.create!(
     project_id: 1,
     description: "The tier 3 for Faze clan allows you meet the Faze clan members after each event!",
     amount: 10000.00,
@@ -107,7 +107,7 @@ Tier.create!(
     delivery_date: Date.parse('01-01-2023', '%m-%d-%Y'),
 )
 
-Tier.create!(
+tier4 = Tier.create!(
     project_id: 2,
     description: "The tier 1 for Hype clan allows you to receive a swag bag after each event!",
     amount: 50.00,
@@ -133,20 +133,20 @@ Tier.create!(
 
 Pledge.create!(
     user_id: 1,
-    project_id: 1,
+    tier_id: tier1.id,
 )
 
 Pledge.create!(
     user_id: 2,
-    project_id: 2,
+    tier_id: tier2.id,
 )
 
 Pledge.create!(
     user_id: 3,
-    project_id: 1,
+    tier_id: tier3.id,
 )
 
 Pledge.create!(
     user_id: 3,
-    project_id: 2,
+    tier_id: tier4.id,
 )
