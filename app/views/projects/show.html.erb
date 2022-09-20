@@ -1,0 +1,8 @@
+<h1>Project info</h1>
+<h2><%= @project.title %></h2>
+<p>Description: <%= @project.description %></p>
+<p>Goal Amount: <%= @project.goal_amount %></p>
+<p>Start Date: <%= @project.start_date %></p>
+<p>End Date: <%= @project.end_date %></p>
+<a href="/projects">Back to all projects</a>
+<%= link_to "Destroy Project", project_path(@project), data: {turbo_method: :delete} %>

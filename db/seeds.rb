@@ -28,11 +28,11 @@
 # )
 
 Project.create!(
-    title: "Faze",
-    description: "This is Faze clan.",
-    goal_amount: 10000,
-    start_date: 10/01/2022,
-    end_date: 11/01/2022,
+  title: "Faze",
+  description: "This is Faze clan.",
+  goal_amount: 10000,
+  start_date: Date.parse("2020-01-01", "%Y-%m-%d"),
+  end_date: Date.parse("2020-01-01", "%Y-%m-%d"),
 )
 
 # Project.create!(
