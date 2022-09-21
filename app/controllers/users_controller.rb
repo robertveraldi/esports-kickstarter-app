@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy ]
-
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: %i[ edit update destroy ]
 
   def show
+    @user = User.find_by(id: params[:id])
+    if @user.id == current_user.id
+      render template: "users/show"
+    else
+      render json: { message: "You are not authorized to view another user's page." }, status: :unauthorized
+    end
   end
 
   def new
     @user = User.new
-    render template: "users/new"
   end
   
   def edit
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        format.html { redirect_to login_url, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
