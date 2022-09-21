@@ -23,6 +23,12 @@
           <%# <%= link_to "Categories", XXX, class: "nav-item nav-link active" %> %>
         </div>
       </div>
+      <div class="navbar-nav">
+      <%= link_to "User", user_path(current_user)%>
+      </div>
+      <div class="navbar-nav">      
+        <%= link_to "Login", login_path, class: "navbar-right" %>
+      </div>
     </nav>
 
     <%= yield %>
