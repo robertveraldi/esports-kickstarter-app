@@ -1,9 +1,25 @@
-<h1>All Projects</h1>
-<% @projects.each do |project| %>
-  <h2><%= project.title %></h2>
-  <p>Description: <%= project.description %></p>
-  <p>Goal Amount: <%= project.goal_amount %></p>
-  <p>Start Date: <%= project.start_date %></p>
-  <p>End Date: <%= project.end_date %></p>
-  <%= link_to "View this project", project %>
-<% end %>
+<div class="container">
+  <div class="row align-items-start justify-content-center">
+    <% @projects.each do |project| %>
+      <div class="card bg-dark text-white mx-2">
+        <img style="height:250px;width:250px;" class="card-img" src="<%= project.logo %>" alt="Card image">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <%= link_to "More Info!", project, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#"><%= project.goal_amount %></a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-img-overlay" style="height:250px;width:250px;">
+          <h5 class="card-title"><%= project.title %></h5>
+          <%# <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> %>
+          <p class="card-text">Deadline: <%= project.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
