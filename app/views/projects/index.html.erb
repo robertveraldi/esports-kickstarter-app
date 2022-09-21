@@ -1,10 +1,28 @@
 <h1>All Projects</h1>
-<% @projects.each do |project| %>
-  <h2><%= project.title %></h2>
-  <p>Description: <%= project.description %></p>
-  <p>Goal Amount: <%= project.goal_amount %></p>
-  <p>Start Date: <%= project.start_date %></p>
-  <p>End Date: <%= project.end_date %></p>
-  <%= link_to "More Info", project %>
-  <%= link_to "New Project", new_project_path %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="card bg-dark text-white">
+        <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlZ3ywQKP2MChoOBkD7Icwz6ydVkZd96hA3zOKjy33ClBZjfUhfoeB8nkipgrs9YGO8HM&usqp=CAU" alt="Card image">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><%= link_to "More Info", project %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
