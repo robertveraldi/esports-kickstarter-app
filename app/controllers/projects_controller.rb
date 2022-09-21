@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: %i[show edit update destroy]
+  before_action :set_tier, only: %i[show edit update destroy]
+
   def index
     @projects = Project.all
     render template: "projects/index"
@@ -30,5 +33,15 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @project.destroy
     redirect_to "/projects", status: :see_other
+  end
+
+  private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  def set_tier
+    @tier = Project.find_by(id: params[:id]).tiers
   end
 end
