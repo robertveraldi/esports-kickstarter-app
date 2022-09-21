@@ -4,5 +4,7 @@
 <p>Goal Amount: <%= @project.goal_amount %></p>
 <p>Start Date: <%= @project.start_date %></p>
 <p>End Date: <%= @project.end_date %></p>
+<hr>
+<%= render @tier %>
 <a href="/projects">Back to all projects</a>
 <%= link_to "Destroy Project", project_path(@project), data: {turbo_method: :delete} %>
