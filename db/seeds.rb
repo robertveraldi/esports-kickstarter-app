@@ -34,6 +34,7 @@ Project.create!(
   start_date: Date.parse("10-01-2022", "%m-%d-%Y"),
   end_date: Date.parse("10-01-2030", "%m-%d-%Y"),
   logo: "https://pbs.twimg.com/media/FNwUZe2WQAQ7JXw.jpg",
+  user_id: 1,
 )
 
 Project.create!(
@@ -43,6 +44,7 @@ Project.create!(
   start_date: Date.parse("10-01-2022", "%m-%d-%Y"),
   end_date: Date.parse("10-01-2031", "%m-%d-%Y"),
   logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlZ3ywQKP2MChoOBkD7Icwz6ydVkZd96hA3zOKjy33ClBZjfUhfoeB8nkipgrs9YGO8HM&usqp=CAU",
+  user_id: 2,
 )
 
 Category.create!(
