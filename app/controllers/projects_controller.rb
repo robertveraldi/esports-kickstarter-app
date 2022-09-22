@@ -18,34 +18,38 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(
-      title: params[:project][:title],
-      description: params[:project][:description],
-      goal_amount: params[:project][:goal_amount],
-      start_date: params[:project][:start_date],
-      end_date: params[:project][:end_date],
-    )
-    @project.save
-    redirect_to "/projects"
+    if current_user
+      @project = Project.new(
+        title: params[:project][:title],
+        description: params[:project][:description],
+        goal_amount: params[:project][:goal_amount],
+        start_date: params[:project][:start_date],
+        end_date: params[:project][:end_date],
+        user_id: current_user.id,
+      )
+      @project.save
+      redirect_to "/projects"
+    end
   end
 
   def edit
     @project = Project.find(params[:id])
+    if current_user && current_user.id == @project.user_id
+      render template: "projects/edit"
+    else
+      redirect_to @project
+    end
   end
 
   def update
     @project = Project.find(params[:id])
-    # @project.title = params[:project][:title] || @project.title
-    # @project.description = params[:project][:description] || @project.description
-    # @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
-    # @project.end_date = params[:project][:end_date] || @project.end_date
-    if @project.update!(
-      @project.title = params[:project][:title] || @project.title,
-      @project.description = params[:project][:description] || @project.description,
-      @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
-      @project.end_date = params[:project][:end_date] || @project.end_date,
-    )
-      # if @project.save
+    # if @project.update
+    @project.title = params[:project][:title] || @project.title
+    @project.description = params[:project][:description] || @project.description
+    @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
+    @project.end_date = params[:project][:end_date] || @project.end_date
+    # )
+    if @project.save!
       redirect_to @project
     else
       render :edit, status: :unprocessable_entity
