@@ -26,21 +26,21 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    if current_user && current_user.id == @project.user_id # if logged in and own project
+      render template: "projects/edit"
+    else
+      # render an error message (in a pop up?) that says you must be signed in and own a project to edit it
+      redirect_to @project
+    end
   end
 
   def update
     @project = Project.find(params[:id])
-    # @project.title = params[:project][:title] || @project.title
-    # @project.description = params[:project][:description] || @project.description
-    # @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
-    # @project.end_date = params[:project][:end_date] || @project.end_date
-    if @project.update!(
-      @project.title = params[:project][:title] || @project.title,
-      @project.description = params[:project][:description] || @project.description,
-      @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
-      @project.end_date = params[:project][:end_date] || @project.end_date,
-    )
-      # if @project.save
+    @project.title = params[:project][:title] || @project.title
+    @project.description = params[:project][:description] || @project.description
+    @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
+    @project.end_date = params[:project][:end_date] || @project.end_date
+    if @project.save!
       redirect_to @project
     else
       render :edit, status: :unprocessable_entity
