@@ -18,15 +18,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(
-      title: params[:project][:title],
-      description: params[:project][:description],
-      goal_amount: params[:project][:goal_amount],
-      start_date: params[:project][:start_date],
-      end_date: params[:project][:end_date],
-    )
+    @project = Project.new(project_params)
+    @project.user_id = current_user.id
     @project.save
-    redirect_to "/projects"
+    redirect_to new_tier_path
   end
 
   def edit
