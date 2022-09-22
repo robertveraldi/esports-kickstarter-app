@@ -7,5 +7,8 @@
 <hr>
 <%= render @tier %>
 <a href="/projects">Back to all projects</a>
-<a href="<%= edit_project_path(@project) %>">Edit</a>
+<%# if statement to only show edit button if person is logged in and owns the project %>
+<% if current_user && current_user.id == @project.user_id%>
+    <a href="<%= edit_project_path(@project) %>">Edit</a>
+  <% end %> 
 <%= link_to "Destroy Project", project_path(@project), data: {turbo_method: :delete} %>
