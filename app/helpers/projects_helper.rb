@@ -9,4 +9,9 @@ module ProjectsHelper
     end
   end
 
+  def delete_project(project)
+    if current_user&.id == project.user.id
+      button_to "Delete this Project", project, method: :delete
+    end
+  end
 end
