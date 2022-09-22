@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
-  before_action :set_tier, only: %i[show edit update destroy]
+  before_action :set_tiers, only: %i[show edit update destroy]
 
   def index
     @projects = Project.all
@@ -59,8 +59,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def set_tier
-    @tier = Project.find_by(id: params[:id]).tiers
+  def set_tiers
+    @tiers = Project.find_by(id: params[:id]).tiers
   end
 
   def project_params
