@@ -35,7 +35,17 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update(project_params)
+    @project.title = params[:project][:title] || @project.title
+    @project.description = params[:project][:description] || @project.description
+    @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
+    @project.end_date = params[:project][:end_date] || @project.end_date
+    # if @project.update!(
+    #   @project.title = params[:project][:title] || @project.title,
+    #   @project.description = params[:project][:description] || @project.description,
+    #   @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
+    #   @project.end_date = params[:project][:end_date] || @project.end_date,
+    # )
+    if @project.save
       redirect_to @project
     else
       render :edit, status: :unprocessable_entity
@@ -59,6 +69,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :goal_amount, :current_amount, :logo, :start_date, :end_date)
+    params.require(:project).permit(:title, :description, :goal_amount, :current_amount, :logo, :start_date, :end_date, :user_id)
   end
 end
