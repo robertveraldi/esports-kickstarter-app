@@ -1,0 +1,37 @@
+<%= form_with(model: tier) do |form| %>
+  <% if tier.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tier.errors.count, "error") %> prohibited this tier from being saved:</h2>
+
+      <ul>
+        <% tier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Tier name"%>
+    <%= form.text_field :name%>
+  </div>
+  <div>
+    <%= form.label "Description"%>
+    <%= form.text_field :description%>
+  </div>
+  <div>
+    <%= form.label "Necessary Donation to Join Tier"%>
+    <%= form.number_field :amount%>
+  </div>
+  <div>
+    <%= form.label "Limit on how many Users can join the Tier"%>
+    <%= form.number_field :limit%>
+  </div>
+  <div>
+    <%= form.label "Delivery Date" %>
+    <%= form.date_select :delivery_date%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

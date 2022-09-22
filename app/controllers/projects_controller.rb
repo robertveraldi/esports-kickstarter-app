@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
-  before_action :set_tier, only: %i[show edit update destroy]
+  before_action :set_tiers, only: %i[show edit update destroy]
 
   def index
     @projects = Project.all
@@ -18,18 +18,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if current_user
-      @project = Project.new(
-        title: params[:project][:title],
-        description: params[:project][:description],
-        goal_amount: params[:project][:goal_amount],
-        start_date: params[:project][:start_date],
-        end_date: params[:project][:end_date],
-        user_id: current_user.id,
-      )
-      @project.save
-      redirect_to "/projects"
-    end
+    @project = Project.new(project_params)
+    @project.user_id = current_user.id
+    @project.save
+    redirect_to new_tier_path
   end
 
   def edit
@@ -67,8 +59,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def set_tier
-    @tier = Project.find_by(id: params[:id]).tiers
+  def set_tiers
+    @tiers = Project.find_by(id: params[:id]).tiers
   end
 
   def project_params

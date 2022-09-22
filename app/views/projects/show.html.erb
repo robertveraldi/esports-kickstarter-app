@@ -1,14 +1,22 @@
-<h1>Project info</h1>
-<h2><%= @project.title %></h2>
-<p>Description: <%= @project.description %></p>
-<p>Goal Amount: <%= @project.goal_amount %></p>
-<p>Start Date: <%= @project.start_date %></p>
-<p>End Date: <%= @project.end_date %></p>
-<hr>
-<%= render @tier %>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="jumbotron">
+      <h1 class="display-1"><%= @project.title %></h1>
+      <p>Current Amount: <%= @project.current_amount %></p>
+      <h4 style="color: green">Goal Amount: $<%= @project.goal_amount %>0</h4>
+      <p class="lead">Started: <%= @project.start_date %></p>
+      <p class="lead">Ends: <%= @project.end_date %></p>
+      <hr class="my-4">
+      <p><%= @project.description %></p>
+    </div>
+  </div>
+</div>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <%= render @tiers %>
+  </div>
+</div>
 <a href="/projects">Back to all projects</a>
-<%# if statement to only show edit button if person is logged in and owns the project %>
-<% if current_user && current_user.id == @project.user_id%>
-    <a href="<%= edit_project_path(@project) %>">Edit</a>
-  <% end %> 
-<%= link_to "Destroy Project", project_path(@project), data: {turbo_method: :delete} %>
+<%= edit_project(@project) %>
+<%= delete_project(@project) %>
+<%= add_tier %>
