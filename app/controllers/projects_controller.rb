@@ -29,6 +29,19 @@ class ProjectsController < ApplicationController
     redirect_to "/projects"
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      redirect_to @project
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @project = Project.find_by(id: params[:id])
     @project.destroy
