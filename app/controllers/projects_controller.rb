@@ -23,6 +23,29 @@ class ProjectsController < ApplicationController
     redirect_to new_tier_path
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    # @project.title = params[:project][:title] || @project.title
+    # @project.description = params[:project][:description] || @project.description
+    # @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
+    # @project.end_date = params[:project][:end_date] || @project.end_date
+    if @project.update!(
+      @project.title = params[:project][:title] || @project.title,
+      @project.description = params[:project][:description] || @project.description,
+      @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
+      @project.end_date = params[:project][:end_date] || @project.end_date,
+    )
+      # if @project.save
+      redirect_to @project
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @project = Project.find_by(id: params[:id])
     @project.destroy
@@ -40,6 +63,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :goal_amount, :current_amount, :logo, :start_date, :end_date)
+    params.require(:project).permit(:title, :description, :goal_amount, :current_amount, :logo, :start_date, :end_date, :user_id)
   end
 end
