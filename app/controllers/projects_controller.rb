@@ -35,17 +35,17 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    @project.title = params[:project][:title] || @project.title
-    @project.description = params[:project][:description] || @project.description
-    @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
-    @project.end_date = params[:project][:end_date] || @project.end_date
-    # if @project.update!(
-    #   @project.title = params[:project][:title] || @project.title,
-    #   @project.description = params[:project][:description] || @project.description,
-    #   @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
-    #   @project.end_date = params[:project][:end_date] || @project.end_date,
-    # )
-    if @project.save
+    # @project.title = params[:project][:title] || @project.title
+    # @project.description = params[:project][:description] || @project.description
+    # @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
+    # @project.end_date = params[:project][:end_date] || @project.end_date
+    if @project.update!(
+      :title = params[:project][:title] || @project.title,
+      :description = params[:project][:description] || @project.description,
+      :goal_amount = params[:project][:goal_amount] || @project.goal_amount,
+      :end_date = params[:project][:end_date] || @project.end_date,
+    )
+    # if @project.save
       redirect_to @project
     else
       render :edit, status: :unprocessable_entity
