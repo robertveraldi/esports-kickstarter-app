@@ -1,3 +1,12 @@
+<nav class="navbar navbar-dark" style="background-color: lightslategrey;">
+  <div class="container justify-content-center">
+    <a href="/projects" class="btn btn-secondary mx-2" role="button">All</a>
+    <a href="/projects?category=1" class="btn btn-secondary mx-2 my-1" role="button">Call of Duty</a>
+    <a href="/projects?category=2" class="btn btn-secondary mx-2 my-1" role="button">Apex</a>
+    <a href="/projects?category=3" class="btn btn-secondary mx-2 my-1" role="button">Fortnite</a>
+    <a href="/projects?category=4" class="btn btn-secondary mx-2 my-1" role="button">Minecraft</a>
+  </div>
+</nav>
 <div class="container">
   <div class="row align-items-start justify-content-center">
     <% @projects.each do |project| %>
@@ -22,4 +31,3 @@
     <% end %>
   </div>
 </div>
-

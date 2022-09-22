@@ -47,22 +47,22 @@ Project.create!(
 
 Category.create!(
   name: "Call of Duty",
-  image: "https://yt3.ggpht.com/JqJzxIWIummbTfKAs9z_kh0LbvYEmSqDce1uiIeg-XJYh-FgYuDsxM4I3aQI-LQczAYgrPCzGQ=s900-c-k-c0x00ffffff-no-rj",
+  image: "https://logonoid.com/images/call-of-duty-logo.jpg",
 )
 
 Category.create!(
   name: "Apex",
-  image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a478ff3b-1a7d-4222-9e1e-d877529ad9be/ddqded1-709ac04e-fd41-45cd-9863-c8442d68fb88.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E0NzhmZjNiLTFhN2QtNDIyMi05ZTFlLWQ4Nzc1MjlhZDliZVwvZGRxZGVkMS03MDlhYzA0ZS1mZDQxLTQ1Y2QtOTg2My1jODQ0MmQ2OGZiODgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0qw2atS3COvpS3FA6QUGemyxJAl6m-S6ZDj4DzDJcxE",
+  image: "https://picfiles.alphacoders.com/230/230558.jpg",
 )
 
 Category.create!(
   name: "Fortnite",
-  image: "https://maexou.ca/boutique/image/cache/catalog/Images%20lampes/Univers%20des%20jeux%20vid%C3%A9o/Fortnite%20logo%2001-550x550.jpg",
+  image: "https://thumbs.dreamstime.com/b/fortnite-purple-vector-logo-banner-violet-blue-pink-gradient-background-online-game-editorial-white-illustration-lilac-144436074.jpg",
 )
 
 Category.create!(
   name: "Minecraft",
-  image: "https://glcometstale.com/wp-content/uploads/2019/09/Untitled-1.jpg",
+  image: "https://pbs.twimg.com/media/E-IVts8X0AM2jTc?format=jpg&name=4096x4096",
 )
 
 ProjectCategory.create!(
