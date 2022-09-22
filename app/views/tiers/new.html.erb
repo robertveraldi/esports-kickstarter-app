@@ -1,2 +1,9 @@
-<h1>Tiers#new</h1>
-<p>Find me in app/views/tiers/new.html.erb</p>
+<h1>New Tiers</h1>
+
+<%= render "form", tier: @tier %>
+
+<br>
+
+<div>
+  <%= link_to "Back to Projects", projects_path %>
+</div>

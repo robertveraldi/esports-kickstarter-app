@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :categories
   resources :users, except: :index
+  resources :tiers
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
