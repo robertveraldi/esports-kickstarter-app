@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="navbar-nav">
-      <%= link_to "User", user_path(current_user || "no user")%>
+      <%= link_to "User", user_path(current_user || 10000000)%>
       </div>
       <div class="navbar-nav">      
         <%= link_to "Login", login_path, class: "navbar-right" %>

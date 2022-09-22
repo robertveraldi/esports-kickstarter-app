@@ -2,4 +2,5 @@
 <p>$<%= tier.amount %> to join tier <%= tier.id %>!</p>
 <p>Only <%= tier.limit %> can join this tier!</p>
 <p>Delivery date: <%= tier.delivery_date %>
+<%= button_to "Join Tier #{tier.name}", method: :update_current_amount %>
 <hr>
