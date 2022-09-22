@@ -14,4 +14,10 @@ module ProjectsHelper
       button_to "Delete this Project", project, method: :delete
     end
   end
+
+  def add_tier
+    if current_user&.id == @project.user.id 
+      button_to "Add Tier", new_tier_path, method: :get
+    end
+  end
 end
