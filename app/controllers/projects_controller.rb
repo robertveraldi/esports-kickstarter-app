@@ -4,10 +4,6 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    if params["category"]
-      category = Category.find_by(id: params["category"])
-      @projects = category.projects
-    end
     render template: "projects/index"
   end
 
@@ -44,12 +40,12 @@ class ProjectsController < ApplicationController
     # @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount
     # @project.end_date = params[:project][:end_date] || @project.end_date
     if @project.update!(
-      :title = params[:project][:title] || @project.title,
-      :description = params[:project][:description] || @project.description,
-      :goal_amount = params[:project][:goal_amount] || @project.goal_amount,
-      :end_date = params[:project][:end_date] || @project.end_date,
+      @project.title = params[:project][:title] || @project.title,
+      @project.description = params[:project][:description] || @project.description,
+      @project.goal_amount = params[:project][:goal_amount] || @project.goal_amount,
+      @project.end_date = params[:project][:end_date] || @project.end_date,
     )
-    # if @project.save
+      # if @project.save
       redirect_to @project
     else
       render :edit, status: :unprocessable_entity
