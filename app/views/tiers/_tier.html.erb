@@ -1,6 +1,13 @@
-<%= tier.description %>
-<p>$<%= tier.amount %> to join tier <%= tier.id %>!</p>
-<p>Only <%= tier.limit %> can join this tier!</p>
-<p>Delivery date: <%= tier.delivery_date %>
-<%= button_to "Join Tier #{tier.name}", method: :update_current_amount %>
-<hr>
+<div class="card mx-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">$<%= tier.amount %> to join tier <%= tier.id %>!</h5>
+    <p class="card-text"><%= tier.description %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Only <%= tier.limit %> can join this tier!</li>
+    <li class="list-group-item">Delivery date: <%= tier.delivery_date %></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Pledge</a>
+  </div>
+</div>
