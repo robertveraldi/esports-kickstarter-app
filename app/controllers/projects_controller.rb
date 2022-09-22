@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    if params["category"]
+      category = Category.find_by(id: params["category"])
+      @projects = category.projects
+    end
     render template: "projects/index"
   end
 
