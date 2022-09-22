@@ -22,11 +22,11 @@
           <%= link_to "New Project", new_project_path, class: "nav-item nav-link active" %>
         </div>
       </div>
-      <div class="navbar-nav">
-      <%= link_to "Account", user_path(current_user || 10000000)%>
+      <div>
+        <%= user_page %>
       </div>
-      <div class="navbar-nav">      
-        <%= link_to "Login", login_path, class: "navbar-right" %>
+      <div class="navbar-right">
+        <%= user_status %>
       </div>
     </nav>
 
