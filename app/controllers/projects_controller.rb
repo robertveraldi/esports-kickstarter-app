@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.user_id = current_user.id
     @project.save
     redirect_to new_tier_path
   end
