@@ -57,4 +57,8 @@ class ProjectsController < ApplicationController
   def set_tier
     @tier = Project.find_by(id: params[:id]).tiers
   end
+
+  def project_params
+    params.require(:project).permit(:title, :description, :goal_amount, :current_amount, :logo, :start_date, :end_date)
+  end
 end
