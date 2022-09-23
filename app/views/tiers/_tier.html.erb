@@ -8,6 +8,6 @@
     <li class="list-group-item">Delivery date: <%= tier.delivery_date %></li>
   </ul>
   <div class="card-body">
-    <%= button_to "Pledge", {:controller => "pledges", :action => "create", :tier_id => tier.id}, :method => :post %>
+    <%= button_to "Pledge", {:controller => "pledges", :action => "create", :tier_id => tier.id}, :method => :post, class: "btn btn-outline-success" %>
   </div>
 </div>
