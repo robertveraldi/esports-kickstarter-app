@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="jumbotron">
       <h1 class="display-1"><%= @project.title %></h1>
-      <p>Current Amount: </p>
+      <p>Current Amount: <%= @project.current_amount %></p>
       <h4 style="color: green">Goal Amount: $<%= @project.goal_amount %>0</h4>
       <p class="lead">Started: <%= @project.start_date %></p>
       <p class="lead">Ends: <%= @project.end_date %></p>
