@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pledges/show'
+  get 'pledges/new'
+  get 'pledges/create'
+  get 'pledges/delete'
   root "projects#index"
   resources :projects
   resources :categories
