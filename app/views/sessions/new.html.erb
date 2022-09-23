@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <h1>Login</h1>
 <%= form_with method: "post", url: "/sessions" do |form| %>
   <div>
@@ -9,8 +10,9 @@
     <%= form.password_field :password %>
   </div>
   <div>
-    <%= form.submit "Submit" %>
+    <%= form.submit "Sign In" %>
   </div>
 <% end%>
 
-<a href="<%= path_to_font new_user_path %>">Sign Up</a>
+  <a class="btn btn-primary my-2" href="<%= path_to_font new_user_path %>">Sign Up</a>
+</div>
