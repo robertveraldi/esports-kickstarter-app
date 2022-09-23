@@ -12,15 +12,15 @@
                 <%= form.text_field :goal_amount, {placeholder: "Goal Amount", class: "form-control"} %>
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row mx-2">
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Start Date</label>
+      <label for="inputEmail4" style="color: white">Start Date</label>
       <%# <input type="startdate" class="form-control" id="inputstartdate4" placeholder="Start Date"> %>
                 <%= form.date_select :start_date, {placeholder: "Start Date", class: "form-control"} %>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputGoal Amount4">End Date</label>
+      <label for="inputGoal Amount4" style="color: white">End Date</label>
       <%# <input type="enddate" class="form-control" id="inputenddate4" placeholder="End Date"> %>
                 <%= form.date_select :end_date, {placeholder: "End Date", class: "form-control"} %>
     </div>
@@ -35,7 +35,9 @@
   </div>
   </div>
   <%# <button type="submit" class="btn btn-primary">Submit</button> %>
-  <%= form.submit %>
+  <div class="mx-2">
+    <%= form.submit %>
+  </div>
 </form>
 <% end %>
 
