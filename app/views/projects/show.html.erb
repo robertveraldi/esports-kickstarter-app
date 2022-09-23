@@ -1,6 +1,6 @@
 <div class="container my-4">
   <div class="row justify-content-center">
-    <div class="jumbotron">
+    <div class="jumbotron col-lg">
       <h1 class="display-1"><%= @project.title %></h1>
       <p>Current Amount: <%= @project.current_amount %></p>
       <h4 style="color: green">Goal Amount: $<%= @project.goal_amount %>0</h4>
@@ -9,6 +9,13 @@
       <hr class="my-4">
       <p><%= @project.description %></p>
     </div>
+    <div class="col-lg">
+      <img style="height:500px;width:500px;" class="mx-4 my-2" src="<%= @project.logo %>" alt="Card image">
+      <a href="/projects" class="btn btn-primary btn-lg btn-block mx-2 my-2">Back to all projects</a>
+      <%= edit_project(@project) %>
+      <%= delete_project(@project) %>
+      <%= add_tier %>
+    </div>
   </div>
 </div>
 <div class="container my-4">
@@ -16,7 +23,3 @@
     <%= render @tiers %>
   </div>
 </div>
-<a href="/projects">Back to all projects</a>
-<%= edit_project(@project) %>
-<%= delete_project(@project) %>
-<%= add_tier %>
