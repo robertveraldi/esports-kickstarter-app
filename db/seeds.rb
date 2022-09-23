@@ -88,6 +88,7 @@ ProjectCategory.create!(
 )
 
 tier1 = Tier.create!(
+  name: "Basic",
   project_id: 1,
   description: "The tier 1 for Faze clan allows you to receive a swag bag after each event!",
   amount: 100.00,
@@ -96,6 +97,7 @@ tier1 = Tier.create!(
 )
 
 tier2 = Tier.create!(
+  name: "Epic",
   project_id: 1,
   description: "The tier 2 for Faze clan allows you to receive tickets to each Faze clan esporting event!",
   amount: 1000.00,
@@ -104,6 +106,7 @@ tier2 = Tier.create!(
 )
 
 tier3 = Tier.create!(
+  name: "Supreme",
   project_id: 1,
   description: "The tier 3 for Faze clan allows you meet the Faze clan members after each event!",
   amount: 10000.00,
@@ -112,6 +115,7 @@ tier3 = Tier.create!(
 )
 
 tier4 = Tier.create!(
+  name: "Mid",
   project_id: 2,
   description: "The tier 1 for Hype clan allows you to receive a swag bag after each event!",
   amount: 50.00,
@@ -120,6 +124,7 @@ tier4 = Tier.create!(
 )
 
 Tier.create!(
+  name: "Mild",
   project_id: 2,
   description: "The tier 2 for Hype clan allows you to receive rickets to each Hype clan esporting event!",
   amount: 500.00,
@@ -128,6 +133,7 @@ Tier.create!(
 )
 
 Tier.create!(
+  name: "Mega",
   project_id: 2,
   description: "The tier 3 for Hype clan allows you to meet the members of Hype clan after each event!",
   amount: 5000.00,
