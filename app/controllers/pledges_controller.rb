@@ -1,13 +1,9 @@
 class PledgesController < ApplicationController
-  def show
-  end
-
-  def new
-  end
 
   def create
-  end
-
-  def delete
+    @pledge = Pledge.new(tier_id: params[:tier_id], user_id: current_user.id)
+    if @pledge.save
+      redirect_to project_path(:id)
+    end
   end
 end

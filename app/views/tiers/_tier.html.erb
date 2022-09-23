@@ -8,6 +8,6 @@
     <li class="list-group-item">Delivery date: <%= tier.delivery_date %></li>
   </ul>
   <div class="card-body">
-    <a href="<%= update_current_amount_and_pledge %>" class="card-link">Pledge</a>
+    <%= button_to "Pledge", {:controller => "pledges", :action => "create", :tier_id => tier.id}, :method => :post %>
   </div>
 </div>
