@@ -1,18 +1,17 @@
 <div class="container-fluid">
-<h1>Login</h1>
+<h1 style="color: white">Login</h1>
 <%= form_with method: "post", url: "/sessions" do |form| %>
-  <div>
+  <div style="color: white">
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
-  <div>
+  <div style="color: white">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-  <div>
+  <div style="color: white">
     <%= form.submit "Sign In" %>
+    <a class="btn btn-primary my-2 mx-2" href="<%= path_to_font new_user_path %>">Sign Up</a>
   </div>
 <% end%>
-
-  <a class="btn btn-primary my-2" href="<%= path_to_font new_user_path %>">Sign Up</a>
 </div>

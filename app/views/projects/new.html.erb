@@ -1,31 +1,31 @@
 <%= form_with model: @project do |form| %>
 <form>
-  <div class="form-row">
+  <div class="form-row mx-2">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Title</label>
+      <label for="inputEmail4" style="color: white">Title</label>
       <%# <input type="title" class="form-control" id="inputtitle4" placeholder="Title"> %>
           <%= form.text_field :title, {placeholder: "Title", class: "form-control"} %>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputGoal Amount4">Goal Amount</label>
+      <label for="inputGoal Amount4" style="color: white">Goal Amount</label>
       <%# <input type="goalamount" class="form-control" id="inputGoal Amount4" placeholder="Goal Amount"> %>
                 <%= form.text_field :goal_amount, {placeholder: "Goal Amount", class: "form-control"} %>
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row mx-2">
 
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Start Date</label>
+      <label for="inputEmail4" style="color: white">Start Date</label>
       <%# <input type="startdate" class="form-control" id="inputstartdate4" placeholder="Start Date"> %>
                 <%= form.date_select :start_date, {placeholder: "Start Date", class: "form-control"} %>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputGoal Amount4">End Date</label>
+      <label for="inputGoal Amount4" style="color: white">End Date</label>
       <%# <input type="enddate" class="form-control" id="inputenddate4" placeholder="End Date"> %>
                 <%= form.date_select :end_date, {placeholder: "End Date", class: "form-control"} %>
     </div>
   </div>
-    <div class="form-group">
+    <div class="form-group mx-2" style="color: white">
       <label for="inputCity">Description</label>
       <%# <input type="text" class="form-control" id="inputDescription"> %>
       <%# <input type="text" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Enter text here."> %>
@@ -35,7 +35,9 @@
   </div>
   </div>
   <%# <button type="submit" class="btn btn-primary">Submit</button> %>
-  <%= form.submit %>
+  <div class="mx-2">
+    <%= form.submit %>
+  </div>
 </form>
 <% end %>
 
